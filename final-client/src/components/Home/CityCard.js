@@ -23,6 +23,24 @@ export default function CityCard(props) {
               const id = props.city.id
               DeleteCity(id).then(() => {
                 console.log('city deleted?')
+
+                //update city
+                props.setCities(prev => {
+                  let newCities = [...prev];
+                  newCities = newCities.filter((city) => {
+                    return city.id !== id
+                  })
+                  return newCities
+                })
+
+                //update places
+                props.setUserData(prev => {
+                  let newData = [...prev]
+                  newData = newData.filter((place) => {
+                    return place.city_id !== id
+                  })
+                  return newData;
+                })
               })
             }}
           >

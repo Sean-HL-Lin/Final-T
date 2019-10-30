@@ -3,6 +3,8 @@ import "../../styles/Home.css";
 import Axios from 'axios';
 import CityCard from './CityCard';
 export default function Home(props) {
+  console.log('show cities')
+  console.log(props.cities)
   const [inputvalue, setInputvalue] = useState()
 
 
@@ -50,7 +52,12 @@ export default function Home(props) {
       <div >
         <div className="city-cards">
           {props.cities.map((city) => {
-            return (<CityCard key={city.id} city={city}/>)
+            return (<CityCard 
+                      key={city.id} 
+                      city={city} 
+                      setCities={props.setCities}
+                      setUserData={props.setUserData}
+                      />)
           })}
         </div>
       </div>
