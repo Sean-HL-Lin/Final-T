@@ -1,6 +1,6 @@
 import React from 'react';
 import userAuthentication from '../../helpers/userAuthentication'
-
+import userRegistration from '../../helpers/userRegistration'
 
 export default function Login(props) {
   return (
@@ -42,17 +42,20 @@ export default function Login(props) {
       <button 
         className="example_e btn-outline-white btn-md my-2 my-sm-0 ml-3" 
         type="submit"
-        onClick= {() => {
+        onClick= {
+          () => {
           console.log(props)
-          userAuthentication({name:props.name, password:props.password}).then((response) => {
+          userRegistration({name:props.name, password:props.password}).then((response) => {
             if (response.data.length) {
               props.setUser(response.data[0])
               props.setAlert('')
             } else {
-              props.setAlert('Wrong username or password')
+              props.setAlert('User already exist')
             }
           })
-        }}
+
+        }
+      }
       >Register</button>
     </div>
   )

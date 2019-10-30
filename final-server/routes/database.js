@@ -21,15 +21,27 @@ module.exports = () => {
 
 
 
-
-
-  router.post("/user", (req,res) => {
+  router.post("/login", (req,res) => {
     db.query(`SELECT * FROM users WHERE name=$1 AND password=$2`,[req.body.name,req.body.password])
       .then((response) => {
         res.send(response.rows)
       }).catch((err) => {
         console.log(err)
       })
+  })
+
+  router.post("/register", (req, res) => {
+    console.log(req.body)
+    db.query(`SELECT * FROM users where name=$1 AND password=$2`, [req.body.name,req.body.password])
+      .then((response) => {
+
+      })
+
+
+
+    res.send('here is for new user')
+
+
   })
 
 
