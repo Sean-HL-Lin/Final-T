@@ -1,5 +1,5 @@
 import React from 'react';
-import userAuthentication from '../../helpers/userAuthentication'
+import userLogin from '../../helpers/userLogin'
 import userRegistration from '../../helpers/userRegistration'
 
 export default function Login(props) {
@@ -28,7 +28,7 @@ export default function Login(props) {
         type="submit"
         onClick= {() => {
           console.log(props)
-          userAuthentication({name:props.name, password:props.password}).then((response) => {
+          userLogin({name:props.name, password:props.password}).then((response) => {
             if (response.data.length) {
               props.setUser(response.data[0])
               props.setAlert('')
@@ -47,13 +47,14 @@ export default function Login(props) {
           console.log(props)
           userRegistration({name:props.name, password:props.password}).then((response) => {
             if (response.data.length) {
+              console.log('i have got data')
+              console.log(response.data[0])
               props.setUser(response.data[0])
               props.setAlert('')
             } else {
               props.setAlert('User already exist')
             }
           })
-
         }
       }
       >Register</button>

@@ -32,16 +32,23 @@ module.exports = () => {
 
   router.post("/register", (req, res) => {
     console.log(req.body)
-    db.query(`SELECT * FROM users where name=$1 AND password=$2`, [req.body.name,req.body.password])
+    db.query(`SELECT * FROM users where name=$1`, [req.body.name])
       .then((response) => {
-
+        // if user exist then dont create user 
+        if (response.rows.length != 0) {
+          res.send('')
+        } else {
+          // else create user in database
+          db.query(`INSERT INTO users (name, password)
+                    values ($1, $2)
+                    RETURNING *
+                  `, [req.body.name,req.body.password]).then((response) => {
+                    const name = response.rows[0].name
+                    const password = response.rows[0].password
+                    res.send([name])
+                  })
+        }
       })
-
-
-
-    res.send('here is for new user')
-
-
   })
 
 
