@@ -11,7 +11,7 @@ export default function userAuthentication(user) {
     method: 'POST',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(user),
-    url: '/user'
+    url: '/login'
   }
   return (
     axios(options)
