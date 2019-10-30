@@ -35,7 +35,11 @@
   display: flex;
   margin-top: 100px;
   margin-left: 65px;
+  margin-right: 65px;
+  overflow: auto;
 }
+
+.city-cards::-webkit-scrollbar { width: 0 !important }
 
 .city-card {
   /* border: 3px solid white; */
@@ -51,6 +55,7 @@
   opacity: 0.7;
   border: 1px solid black;
 }
+
 
 .city-card-layer {
   position: relative;

@@ -11,7 +11,7 @@ export default function CityCard(props) {
       position: 'relative'
     }
   return (
-    <>
+    <div>
       <div className="city-card" style = {style}>
         <div>
           <Link to={"/" + props.city.city} style={{color: 'white'}}><b>{props.city.city}</b></Link>
@@ -47,6 +47,6 @@ export default function CityCard(props) {
             X
           </button>
       </div>
-    </>      
+    </div>      
   )
 }
