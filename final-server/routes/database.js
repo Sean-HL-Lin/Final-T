@@ -43,9 +43,7 @@ module.exports = () => {
                     values ($1, $2)
                     RETURNING *
                   `, [req.body.name,req.body.password]).then((response) => {
-                    const name = response.rows[0].name
-                    const password = response.rows[0].password
-                    res.send([name])
+                    res.send(response.rows)
                   })
         }
       })
