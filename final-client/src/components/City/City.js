@@ -30,6 +30,7 @@ export default function City(props) {
   return(
     <>
       <div className="combine-two-search-bar">
+
         <SearchBar
           setplaces={setfoundPlaces}
           city={props.city}

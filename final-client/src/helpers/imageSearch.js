@@ -26,6 +26,7 @@ export default function imageSearch(inputvalue,setInputvalue,setplaces, setAlert
   ).then((response) => {
     setInputvalue('')
     setAlert('')
+    console.log(response)
     if (response.data.responses[0].landmarkAnnotations) {
       const landmarks = response.data.responses[0].landmarkAnnotations.map((landmark) => landmark.description)
       Promise.all(
