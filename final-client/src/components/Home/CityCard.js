@@ -9,10 +9,13 @@ export default function CityCard(props) {
       backgroundImage: `url(${props.city.c_picture})`,
     }
   return (
-    <div className="city-card" style = {style}>
+    <Link to={"/" + props.city.city} className="city-card" style = {style}>
       <div>
-        <Link to={"/" + props.city.city} style={{color: 'white'}}><b>{props.city.city}</b></Link>
+        <p style={{color: 'white'}}><b>{props.city.city}</b></p>
       </div>
-    </div>
+    </Link>
+
+
+
   )
 }
