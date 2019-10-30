@@ -38,6 +38,22 @@ export default function Login(props) {
           })
         }}
       >Login</button>
+
+      <button 
+        className="example_e btn-outline-white btn-md my-2 my-sm-0 ml-3" 
+        type="submit"
+        onClick= {() => {
+          console.log(props)
+          userAuthentication({name:props.name, password:props.password}).then((response) => {
+            if (response.data.length) {
+              props.setUser(response.data[0])
+              props.setAlert('')
+            } else {
+              props.setAlert('Wrong username or password')
+            }
+          })
+        }}
+      >Register</button>
     </div>
   )
 }
