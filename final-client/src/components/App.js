@@ -16,7 +16,7 @@ export default function App() {
   const [userdata, setUserData] = useState([])
   const [cities, setCities] = useState([])
   const [alert, setAlert] = useState('')
-
+  console.log(userdata)
   useEffect(() => {
     if (user.name) {
       getUserData(user.id).then((response) => {
@@ -84,6 +84,7 @@ export default function App() {
                                             cities={cities}
                                             setCities={setCities}
                                             setAlert={setAlert}
+                                            setUserData={setUserData}
                                           />} />
       <Route path="/imageSearch" exact render={() => <ImageSearch
                                                         cities={cities}

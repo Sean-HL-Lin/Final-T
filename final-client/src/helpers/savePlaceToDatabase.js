@@ -42,7 +42,6 @@ export default function SavePlaceToDatabase(props, targetCity, setUser) {
         ]
         })
         setUser(prev => ({...prev}))
-
       })
     })
   }

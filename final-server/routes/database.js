@@ -107,6 +107,8 @@ module.exports = () => {
               console.log(err)
             })})
 
+  
+
 
 
   router.post('/schedules', (req, res) => {
@@ -173,6 +175,19 @@ module.exports = () => {
               res.send(response.rows)
             })
   })
+
+  router.post(`/city/:id/delete`, (req, res) => {
+    const id = req.params.id
+    db.query(`DELETE FROM cities
+              WHERE id = $1
+            `, [id]).then(() => {
+              res.send('')
+            }).catch((res) => {
+              console.log(res)
+              res.send('')
+            })
+  })
+  
 
   // add schedule id to places 
   router.put(`/places/:id/schedule`, (req, res) => {
