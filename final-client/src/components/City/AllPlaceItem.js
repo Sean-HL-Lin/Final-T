@@ -3,6 +3,8 @@ import "../../styles/City.css";
 import addScheduleIdToPlace from "../../helpers/addScheduleIdToPlace";
 import "react-toastify/dist/ReactToastify.css";
 import AlertButton from './Alert';
+import DeletePlace from "../../helpers/deletePlace";
+
 
 export default function AllPlaceItem(props) {
   const [targetScheduleId, setTargetScheduleId] = useState('Schedule ID')
@@ -25,7 +27,7 @@ export default function AllPlaceItem(props) {
         className="row"
       >
         <div
-        className="col-8"
+        className="col-6"
         >
 
 
@@ -43,17 +45,34 @@ export default function AllPlaceItem(props) {
       </select>
         </div>
         <div
-        className='col-4'
+        className='col-2'
         >
-      <AlertButton
-        onClick={() => {
-          addScheduleIdToPlace(props.place.id, targetScheduleId, props.setUser)
-          setTargetScheduleId('Schedule ID')
-        }}
-        text={"👍 " + props.place.name + " has been added"}
-      >
-      </AlertButton>
+          <AlertButton
+            onClick={() => {
+              addScheduleIdToPlace(props.place.id, targetScheduleId, props.setUser)
+              setTargetScheduleId('Schedule ID')
+            }}
+            text={"👍 " + props.place.name + " has been added"}
+            content = 'Add'
+          >
+          </AlertButton>
+
         </div>
+
+        <div
+        className='col-3'
+        >
+          <AlertButton
+            onClick={() => {
+              
+            }}
+            text={"👍 " + props.place.name + " has been deleted"}
+            content = 'Delete'
+          >
+          </AlertButton>
+
+        </div>
+
       </div>
         
       </div>

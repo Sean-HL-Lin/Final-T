@@ -12,10 +12,9 @@ export default function AlertButton(props) {
           notify();
           props.onClick();
         }}
-      >Add
+      >{props.content}
       </button>
 
-     
     </div>
   );
 }
