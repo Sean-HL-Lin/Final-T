@@ -28,6 +28,7 @@ export default function CityPlace(props) {
               return each.name === placeName
             })
             if (filteredPlaces.length === 0 ) {
+              
               // add markers to map 
               props.addMarker[0](props.place.lat, props.place.lng, props.place.name)
 
@@ -39,6 +40,7 @@ export default function CityPlace(props) {
             }
           }}
           text={"👍 " + props.place.name + " has been added"}
+          content='Add'
         ></AlertButton>
 
       </div>
