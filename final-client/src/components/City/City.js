@@ -55,21 +55,21 @@ export default function City(props) {
           <div className="col-1" ></div>
           <div className="col-6">
             <Map
-            places={props.places.filter((place) => {
-              if (currentSchedule.id === "All") {
-                return true
-              } else {
-                return place.schedule_id === currentSchedule.id
-              }
-            })}
-            currentSchedule={currentSchedule}
-            lat={props.city.c_lat}
-            lng={props.city.c_lng}
-            setMegaSteps={setMegaSteps}
-            setSteps={setSteps}
-            setTargetMap = {setTargetMap}
-            setAddMarker={setAddMarker}
-           />
+              places={props.places.filter((place) => {
+                if (currentSchedule.id === "All") {
+                  return true
+                } else {
+                  return place.schedule_id === currentSchedule.id
+                }
+              })}
+              currentSchedule={currentSchedule}
+              lat={props.city.c_lat}
+              lng={props.city.c_lng}
+              setMegaSteps={setMegaSteps}
+              setSteps={setSteps}
+              setTargetMap = {setTargetMap}
+              setAddMarker={setAddMarker}
+            />
 
           </div>
           <div className="col-4 scheduleListParent" style={{ position: 'relative'}}>
