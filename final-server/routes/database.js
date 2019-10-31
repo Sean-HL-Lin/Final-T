@@ -94,7 +94,17 @@ module.exports = () => {
                 }).catch((err) => { console.log(err)})
     }
   })
- 
+
+  router.post('/places/:id/delete', (req, res) => {
+    const id = req.params.id
+    db.query(`DELETE FROM places
+              WHERE id = $1
+            `, [id]).then(() => {
+              res.send('')
+            }).catch((response) => {
+              res.send('')
+            })
+  })
 
   router.post('/cities', (req, res) => {
     const city = req.body.city

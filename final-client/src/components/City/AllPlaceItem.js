@@ -3,7 +3,7 @@ import "../../styles/City.css";
 import addScheduleIdToPlace from "../../helpers/addScheduleIdToPlace";
 import "react-toastify/dist/ReactToastify.css";
 import AlertButton from './Alert';
-import DeletePlace from "../../helpers/deletePlace";
+import deletePlace from "../../helpers/deletePlace";
 
 
 export default function AllPlaceItem(props) {
@@ -64,7 +64,14 @@ export default function AllPlaceItem(props) {
         >
           <AlertButton
             onClick={() => {
-              
+              deletePlace(props.place.id).then((res) => {
+                
+                console.log('response for server delete route')
+                console.log(res)
+
+              }).catch((res) => {
+                console.log(res)
+              })
             }}
             text={"👍 " + props.place.name + " has been deleted"}
             content = 'Delete'
