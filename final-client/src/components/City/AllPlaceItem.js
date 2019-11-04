@@ -65,12 +65,9 @@ export default function AllPlaceItem(props) {
           <AlertButton
             onClick={() => {
               deletePlace(props.place.id).then((res) => {
-                console.log('response for server delete route')
-                console.log(res)
                 // update places
                 props.setUser(prev => ({...prev}))
               }).catch((res) => {
-                console.log(res)
               })
             }}
             text={"👍 " + props.place.name + " has been deleted"}

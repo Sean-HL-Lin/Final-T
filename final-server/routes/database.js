@@ -31,7 +31,6 @@ module.exports = () => {
   })
 
   router.post("/register", (req, res) => {
-    console.log(req.body)
     db.query(`SELECT * FROM users where name=$1`, [req.body.name])
       .then((response) => {
         // if user exist then dont create user 
