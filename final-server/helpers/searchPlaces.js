@@ -49,7 +49,7 @@ module.exports = function searchPlaces (dataForSearch, res) {
               resultPlaces[i].picture = pictures[i]
             }
             res.send(resultPlaces)
-          }).catch(err => console.log(err))
+          }).catch(err => {})
         } else {
           res.send(resultPlaces)
         }

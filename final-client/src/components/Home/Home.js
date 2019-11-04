@@ -3,8 +3,6 @@ import "../../styles/Home.css";
 import Axios from 'axios';
 import CityCard from './CityCard';
 export default function Home(props) {
-  console.log('show cities')
-  console.log(props.cities)
   const [inputvalue, setInputvalue] = useState()
 
 

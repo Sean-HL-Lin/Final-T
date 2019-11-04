@@ -16,7 +16,7 @@ export default function App() {
   const [userdata, setUserData] = useState([])
   const [cities, setCities] = useState([])
   const [alert, setAlert] = useState('')
-  console.log(userdata)
+
   useEffect(() => {
     if (user.name) {
       getUserData(user.id).then((response) => {

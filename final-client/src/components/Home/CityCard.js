@@ -22,8 +22,6 @@ export default function CityCard(props) {
             onClick={() => {
               const id = props.city.id
               DeleteCity(id).then(() => {
-                console.log('city deleted?')
-
                 //update city
                 props.setCities(prev => {
                   let newCities = [...prev];
