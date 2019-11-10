@@ -51,24 +51,25 @@ export default function Place(props) {
         <div className="col-1"></div>
       <div className="col-3">
           <AlertButton
-          onClick={() => {
-            props.setAlert('')
-            // check if place is in database already
-            const placeName = props.place.name
-            const filteredPlaces = props.userdata.filter((each) => {
-              return each.name === placeName
-            })
+            onClick={() => {
+              props.setAlert('')
+              // check if place is in database already
+              const placeName = props.place.name
+              const filteredPlaces = props.userdata.filter((each) => {
+                return each.name === placeName
+              })
 
-            if (filteredPlaces.length === 0 ) {
-              savePlaceToDatabase(props, targetCity, props.setUser)
-            } else {
-              props.setAlert('Failed to save place. Check if you are signed in and place is not in wishlist already')
-            }
+              if (filteredPlaces.length === 0 ) {
+                savePlaceToDatabase(props, targetCity, props.setUser)
+              } else {
+                props.setAlert('Failed to save place. Check if you are signed in and place is not in wishlist already')
+              }
 
 
-          }}
-        text={"👍 " + props.place.name + " has been added"}
-         ></AlertButton>
+            }}
+            content='Add'
+            text={"👍 " + props.place.name + " has been added"}
+          ></AlertButton>
           </div>
           </div>
         </div>
