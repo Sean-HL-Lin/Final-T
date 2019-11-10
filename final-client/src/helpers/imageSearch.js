@@ -2,28 +2,11 @@ import axios from "axios";
 import searchPlaces from '../helpers/searchPlaces'
 // load .env data into process.env
 
-const APIKey = process.env.REACT_APP_GoogleAPIKey
 
 //imaga search option
 export default function imageSearch(inputvalue,setInputvalue,setplaces, setAlert) {
-  return axios.post(`https://vision.googleapis.com/v1/images:annotate?key=${APIKey}`,
-  {
-    "requests": [
-        {
-          "image": {
-            "source": {
-              "imageUri": inputvalue  
-            } 
-          },
-          "features": [
-            {
-              "type": "LANDMARK_DETECTION"
-            }
-          ]
-        }
-    ]
-  }
-  ).then((response) => {
+
+  axios.post(`/imageSearch`, {imageUrL: inputvalue}).then((response) => {
     setInputvalue('')
     setAlert('')
     if (response.data.responses[0].landmarkAnnotations) {

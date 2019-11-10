@@ -1,4 +1,4 @@
-## Overall Google Cloud Platfrom setup
+## Google Cloud Platfrom setup
 1. Navigate to Google Cloud Platfrom
 
 2. Create a project
@@ -7,7 +7,7 @@
 
 4. Click Library under API & Services
 
-5. In the library, enable "Place API", "Maps JavaScript API", "Directions API", "Cloud Vision API"
+5. In the library, enable "Place API", "Cloud Vision API"
 
 6. Follow instruction of the following Server Setup section
 

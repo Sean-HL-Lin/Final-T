@@ -1,7 +1,7 @@
 // load .env data into process.env
 require('dotenv').config();
 const APIKey = process.env.GoogleAPIKey
-
+const imageSearch = require('../helpers/imageSearch');
 
 const express = require('express');
 const router  = express.Router();
@@ -20,6 +20,13 @@ module.exports = () => {
       dataForSearch.radius= '10000'
     }
     searchPlaces(dataForSearch, res)
+  })
+
+  router.post('/imageSearch', (req, res) => {
+    const imageURL = req.body.imageUrL
+    imageSearch(imageURL).done((response) => {
+        res.send(response)
+      });
   })
 
   return router;
