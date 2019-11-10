@@ -67,7 +67,7 @@ export default function Place(props) {
 
 
             }}
-            content='Add'
+            content='Add to Wishlist'
             text={"👍 " + props.place.name + " has been added"}
           ></AlertButton>
           </div>
