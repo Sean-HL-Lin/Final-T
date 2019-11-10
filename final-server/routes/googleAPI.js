@@ -1,7 +1,7 @@
 // load .env data into process.env
 require('dotenv').config();
 const APIKey = process.env.GoogleAPIKey
-const request = require('then-request');
+const imageSearch = require('../helpers/imageSearch');
 
 const express = require('express');
 const router  = express.Router();
@@ -24,35 +24,10 @@ module.exports = () => {
 
   router.post('/imageSearch', (req, res) => {
     const imageURL = req.body.imageUrL
-    console.log(imageURL)
-    request(
-      'POST',
-      `https://vision.googleapis.com/v1/images:annotate?key=${APIKey}`,
-      {
-        json: {
-          "requests": [
-              {
-                "image": {
-                  "source": {
-                    "imageUri": imageURL  
-                  } 
-                },
-                "features": [
-                  {
-                    "type": "LANDMARK_DETECTION"
-                  }
-                ]
-              }
-          ]
-        }
-      }
-      ).getBody('utf8').then(JSON.parse).done((response) => {
+    imageSearch(imageURL).done((response) => {
         res.send(response)
       });
   })
-
-
-
 
   return router;
 };
