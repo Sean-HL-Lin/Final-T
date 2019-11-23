@@ -44,7 +44,7 @@ Back-end
 Create city card
 !['Create city card'](https://github.com/Sean-HL-Lin/InstanTrip/blob/master/Doc/createCityCard.png)
 
-Image search function
+Image search function(make sure image url ends with a image type extension, example: https://blog-cdn.routeperfect.com/wp-content/uploads/2018/12/05135644/shutterstock_93283852-min.jpg)
 !['Image search function'](https://github.com/Sean-HL-Lin/InstanTrip/blob/master/Doc/imageSearch.png)
 
 All places in wishlist
