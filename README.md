@@ -13,9 +13,6 @@ Also, users can search place information by image URL and then add found places 
 ## Awards
 Best project of Lighthouse Lab's Sept 2019 Demo Day
 
-## Website hosted on AWS
-[InstanTrip](http://instantrip.us-east-2.elasticbeanstalk.com/)
-
 ## Setup
 1. Clone this repositories
 2. [Client side setup](https://github.com/Sean-HL-Lin/InstanTrip/blob/master/final-client/README.md)
