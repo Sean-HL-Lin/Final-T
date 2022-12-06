@@ -16,7 +16,7 @@
     "google-maps": "^3.3.0",
     "google-maps-react": "^2.0.2",
     "node-kmeans": "^1.1.9",
-    "qs": "^6.8.0",
+    "qs": "^6.8.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-fontawesome": "^1.6.1",
